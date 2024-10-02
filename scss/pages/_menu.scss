@@ -1,0 +1,27 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.Menu {
+  &__wrapper {
+    @include evenGrid(2, 1rem);
+    justify-items: center;
+
+    @include mediaQuery(520px) {
+      grid-template-columns: 1fr;
+    }
+  
+  }
+  img {
+    border-radius: 3rem;
+    @include imgFit(80%, 30rem);
+        @include mediaQuery(520px){
+          height: 10rem;
+          width: 25rem;
+          border-radius: .5rem;
+        }
+  } 
+   .img {
+      display: grid;
+      justify-items: center;
+    }
+}

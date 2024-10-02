@@ -1,0 +1,102 @@
+@use "../base/" as *;
+@use "../abstract/" as *;
+
+.contact {
+  &__wrapper {
+    .social {
+      @include centerAll;
+      gap: 5rem;
+      display: flex;
+      margin-bottom: 2rem;
+      li:first-child {
+        color: $clr--secondary;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      li:last-child {
+        color: $clr--light;
+        font-weight: 600;
+      }
+    }
+    @include mediaQuery(520px) {
+      .social {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+    .map {
+      @include centerAll;
+      iframe {
+        width: 70rem;
+        height: 40rem;
+        border-radius: 2rem;
+      }
+      @include mediaQuery(520px) {
+        iframe {
+          display: none;
+        }
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      .form__title {
+        @include centerAll;
+        display: flex;
+        flex-direction: column;
+        h4 {
+          font-size: 3rem;
+          margin-top: 2rem;
+        }
+        p {
+          margin-bottom: 2rem;
+          font-weight: 500;
+        }
+      }
+      form {
+        @include mediaQuery(520px) {
+          width: 100%;
+          padding: 0;
+        }
+        padding: 2rem 10rem;
+        .form__info {
+          display: flex;
+          gap: 5rem;
+          @include mediaQuery(520px) {
+            display: flex;
+            gap: 1rem;
+          }
+          input {
+            width: 32.5rem;
+            @include mediaQuery(520px) {
+              width: 10rem;
+            }
+          }
+        }
+        label {
+          text-align: left;
+        }
+        input {
+          width: 100%;
+          height: 3rem;
+          border-radius: 1rem;
+          margin-bottom: 2rem;
+          background-color: transparent;
+          border: 1px solid $clr--light;
+        }
+        textarea {
+          @extend input;
+          height: 10rem;
+          margin-bottom: 3rem;
+        }
+        .button {
+          @include centerAll;
+        }
+        input:enabled {
+          color: $clr--light;
+        }
+      }
+    }
+  }
+}
